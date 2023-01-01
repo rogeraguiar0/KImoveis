@@ -7,14 +7,15 @@ import {
   updateUserController,
 } from "../controllers/user.controller";
 
-import { validateSerializerMiddleware } from "../middlewares/validateSerializer.middleware";
-import { verifyTokenMiddleware } from "../middlewares/users/verifyTokenMiddleware";
 import { isUserTokenHimselfMiddleware } from "../middlewares/users/isUserTokenHimself.middleware";
 import { isUserAdminMiddleware } from "../middlewares/users/isUserAdmin.middleware";
 import { userUpdateWronkKeyMiddleware } from "../middlewares/users/userUpdateWrongKey.middleware";
+import { userAlreadyExistsMiddleware } from "../middlewares/users/userAlreadyExists.middleware";
+
+import { verifyTokenMiddleware } from "../middlewares/verifyTokenMiddleware";
+import { validateSerializerMiddleware } from "../middlewares/validateSerializer.middleware";
 
 import { userRequest, userUpdate } from "../serializers/user.serializer";
-import { userAlreadyExistsMiddleware } from "../middlewares/users/userAlreadyExists.middleware";
 
 export const userRoutes = Router();
 

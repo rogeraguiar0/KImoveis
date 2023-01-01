@@ -9,10 +9,6 @@ export const listUsersService = async (): Promise<IUser[] | undefined> => {
 
   const users = await userRepo.find();
 
-  if (!users) {
-    throw new AppError("Users not found", 404);
-  }
-
   const usersWithoutPassword = await userList.validate(users, {
     stripUnknown: true,
   });
