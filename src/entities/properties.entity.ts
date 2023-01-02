@@ -18,8 +18,8 @@ export class Properties {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column()
-  sold: boolean;
+  @Column({ default: false, nullable: true })
+  sold?: boolean;
 
   @Column({ type: "decimal", precision: 12, scale: 2 })
   value: number;
@@ -33,13 +33,13 @@ export class Properties {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @OneToMany(() => Schedules, (schedule) => schedule.property)
-  schedule: Schedules;
+  @OneToMany(() => Schedules, (schedule) => schedule.properties)
+  schedule: Schedules[];
 
   @OneToOne(() => Adresses)
   @JoinColumn()
-  adress: Adresses;
+  address: Adresses;
 
-  @ManyToOne(() => Categories, (category) => category.id)
+  @ManyToOne(() => Categories, (category) => category.properties)
   category: Categories;
 }

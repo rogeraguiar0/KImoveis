@@ -17,10 +17,10 @@ export class User {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column({ length: 50 })
+  @Column({ length: 100 })
   name: string;
 
-  @Column({ length: 50, unique: true })
+  @Column({ length: 100, unique: true })
   email: string;
 
   @Column()
@@ -29,7 +29,7 @@ export class User {
   @Column({ default: true })
   isActive: boolean;
 
-  @Column({ length: 50 })
+  @Column({ length: 100 })
   password: string;
 
   @CreateDateColumn()

@@ -22,6 +22,8 @@ export const createUserSessionService = async ({
 
   if (!user) throw new AppError("User or password invalid", 403);
 
+  if (!user.isActive) throw new AppError("User or password invalid", 400);
+
   const validatePassword = await compare(password, user.password);
 
   if (!validatePassword) throw new AppError("User or password invalid", 403);

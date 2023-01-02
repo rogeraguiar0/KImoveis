@@ -5,14 +5,14 @@ export class Adresses {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column({ length: 50 })
+  @Column({ length: 100 })
   district: string;
 
   @Column({ length: 9 })
   zipCode: string;
 
   @Column({ length: 10, nullable: true })
-  number: string;
+  number?: string;
 
   @Column({ length: 50 })
   city: string;

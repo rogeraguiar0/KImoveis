@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 
-import AppDataSource from "../../data-source";
-import { User } from "../../entities/user.entity";
+import AppDataSource from "../data-source";
+import { User } from "../entities/user.entity";
 
 export const isUserAdminMiddleware = async (
   req: Request,

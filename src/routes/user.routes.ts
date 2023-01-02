@@ -8,11 +8,11 @@ import {
 } from "../controllers/user.controller";
 
 import { isUserTokenHimselfMiddleware } from "../middlewares/users/isUserTokenHimself.middleware";
-import { isUserAdminMiddleware } from "../middlewares/users/isUserAdmin.middleware";
+import { isUserAdminMiddleware } from "../middlewares/isUserAdmin.middleware";
 import { userUpdateWronkKeyMiddleware } from "../middlewares/users/userUpdateWrongKey.middleware";
 import { userAlreadyExistsMiddleware } from "../middlewares/users/userAlreadyExists.middleware";
 
-import { verifyTokenMiddleware } from "../middlewares/verifyTokenMiddleware";
+import { verifyTokenMiddleware } from "../middlewares/verifyToken.middleware";
 import { validateSerializerMiddleware } from "../middlewares/validateSerializer.middleware";
 
 import { userRequest, userUpdate } from "../serializers/user.serializer";
