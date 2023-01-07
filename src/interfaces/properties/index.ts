@@ -1,4 +1,5 @@
 import { ICategoryResponse } from "../categories";
+import { IScheduleResponse } from "../schedules";
 
 export interface IAddressRequest {
   district: string;
